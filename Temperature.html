@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function Temperature(degreeC) {
+        this.temperatureC = degreeC;
+        this.temperatureF = degreeC * 9 / 5 + 32;
+        this.temperatureK = degreeC + 273;
+    }
+
+    let temperature = new Temperature(25);
+    document.write("F= " + temperature.temperatureF);
+    document.write("<br>K= " + temperature.temperatureK);
+
+</script>
+</html>
