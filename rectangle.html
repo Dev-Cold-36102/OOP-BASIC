@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>rectangle</title>
 </head>
 <body>
 
@@ -23,10 +23,7 @@
             return this.height * this.width;
         }
         this.perimeter = function () {
-            return ((this.height + this.width) * 2);
-        }
-        this.draw = function () {
-            document.getElementById("draw").innerHTML = "<canvas width=\"this.width\" height=\"this.height\" style=\"border:1px solid #d3d3d3;\"></canvas>"
+            return this.height* 2 +this.width * 2;
         }
 
     }
@@ -37,7 +34,7 @@
         let rec = new Rectangle(height, width);
         document.getElementById("area").innerHTML = "dien tich = " + rec.area();
         document.getElementById("perimeter").innerHTML = "<br>chu vi = " + rec.perimeter();
-        rec.draw();
+        document.getElementById("draw").innerHTML="<canvas  width=rec.width height=rec.height style=\"border:1px solid red;\"></canvas>"
 
 
     }
