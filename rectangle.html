@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<button onclick="display()" type="button">enter the size</button>
+<br/>
+<div id="area"></div>
+<br/>
+<div id="perimeter"></div>
+<br/>
+
+<div id="draw"></div>
+<script>
+    function Rectangle(height, width) {
+        this.height = height;
+        this.width = width;
+        this.area = function () {
+            return this.height * this.width;
+        }
+        this.perimeter = function () {
+            return ((this.height + this.width) * 2);
+        }
+        this.draw = function () {
+            document.getElementById("draw").innerHTML = "<canvas width=\"this.width\" height=\"this.height\" style=\"border:1px solid #d3d3d3;\"></canvas>"
+        }
+
+    }
+
+    function display() {
+        let height = prompt("enter the height:");
+        let width = prompt("enter the width:");
+        let rec = new Rectangle(height, width);
+        document.getElementById("area").innerHTML = "dien tich = " + rec.area();
+        document.getElementById("perimeter").innerHTML = "<br>chu vi = " + rec.perimeter();
+        rec.draw();
+
+
+    }
+</script>
+</body>
+</html>
