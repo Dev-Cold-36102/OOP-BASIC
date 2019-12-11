@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>edam eva</title>
+    <style>
+        table {;
+            width: 100%;
+        }
+
+        table,
+        th,
+        td {
+            width: 400px;
+            height: 200px;
+            text-align: center;
+            vertical-align: mid;
+            val;
+        }
+
+    </style>
+</head>
+<body>
+<table border="1" cellspacing="0">
+    <tr>
+        <td><img src="eva.png"></td>
+        <td><img height="300" src="apple.jpg" width="200"></td>
+        <td><img src="adam.png"></td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="Eva.say()" type="button">Say</button>
+            <br/><br/>
+            <button onclick="Eva.eat()" type="button">EAT apple</button>
+            <br/><br/>
+            <button onclick="Eva.checkWeightofApple()" type="button">check apple</button>
+            <br/><br/>
+            <button onclick="Adam.checkInfofHuman()" type="button">check my friend!</button>
+        </td>
+
+        <td>
+            <button onclick="Apple.weight()" type="button">GET AN OTHER APPLE</button>
+        </td>
+
+        <td>
+            <button onclick="Adam.say()" type="button">Say</button>
+            <br/><br/>
+            <button onclick="Adam.eat()" type="button">EAT apple</button>
+            <br/><br/>
+            <button onclick="Adam.checkWeightofApple()" type="button">check apple</button>
+            <br/><br/>
+            <button onclick="Eva.checkInfofHuman()" type="button">check my friend!</button>
+        </td>
+    </tr>
+</table>
+
+<script>
+    let idOfHuman = ["Adam", "Eva"];
+    let person = ["He", "She"];
+    let index = 0;
+    let weightOfapple = 10;
+
+    function apple() {
+
+        this.weight = function () {
+            weightOfapple = 10;
+            alert(" You have a new apple ! Bon Appetite!");
+
+        }
+
+    }
+
+    function human(name, gender, weight) {
+        this.name = name;
+        this.gender = gender;
+        this.weight = weight;
+        this.say = function () {
+            if (this.name == idOfHuman[index]) {
+                alert("hello,i am " + this.name + " i love " + idOfHuman[1 - index] + "! " + person[1 - index] + " is very good!");
+            } else {
+                alert("hello,i am " + this.name + " i love " + idOfHuman[index] + "! " + person[index] + " is very good!");
+            }
+        }
+        this.eat = function () {
+            if (weightOfapple > 0) {
+                this.weight++;
+                weightOfapple--;
+                alert("you have " + weightOfapple + " times to eat");
+
+            } else {
+                alert("you are maximum!");
+            }
+
+        }
+        this.checkWeightofApple = function () {
+            alert("the apple's weight is: " + weightOfapple);
+
+        }
+        this.checkInfofHuman = function () {
+            index = 1 - index;
+            alert("hello,i am " + this.name + "," + this.weight + " kg " + "i am " + this.gender);
+        }
+
+    }
+
+    var Apple = new apple();
+    var Adam = new human("Adam", "male", 40);
+    var Eva = new human("Eva", "female", 30);
+
+
+</script>
+</body>
+</html>
